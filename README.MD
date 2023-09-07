@@ -47,6 +47,11 @@ Screenshot tomado del Carrito.
 +   Ordena productos por nombre o precio.
 +   Productos y contenido del carrito almacenados en el localStorage.
 
+## CHANGELOGS 1:
++   El boton de "finalizar compra" se tradujo al inglés.
++   El aviso de "tu carrito está vacío" se hizo mas formal.
++   Se corrigió un problema que generaba que el ordenamiento por 'default' no se ejecute.
+
 ## FUTURAS FUNCIONALIDADES
 +   Agregar contenido a las demas secciones del header.
 +   Estilizar y hacer funcionar la 'lupa' para buscar un producto.

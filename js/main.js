@@ -40,7 +40,13 @@ function principal() {
     botonOrdenarPrecioAlto.addEventListener("click", () => ordenarPorPrecioAlto(localStorage.productos))
 
     const botonOrdenarDefault = document.getElementById("ordenarDefault")
-    botonOrdenarDefault.addEventListener("click", () => principal())
+    botonOrdenarDefault.addEventListener("click", function (){
+        localStorage.removeItem("productos")
+        principal()
+        if (filtro != undefined){
+            filtrarPorCategoria(filtro)
+        }
+    })
 
     /*-------------------- Función para ordenar por Nombre/Precio. --------------------*/
 
