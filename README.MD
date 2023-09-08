@@ -38,6 +38,8 @@ Screenshot tomado del Carrito.
 2.  Pages:
     +   Si lo deseas, puedes acceder al archivo a través de githubPages.
 
+            https://giancarissimo.github.io/javascript-58110-proyectoFinal/
+
 ## CARACTERÍSTICAS
 +   Explora una amplia gama de productos de Apple.
 +   Agrega productos al carrito de compras.
