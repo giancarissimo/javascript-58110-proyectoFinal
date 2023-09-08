@@ -38,6 +38,8 @@ Screenshot tomado del Carrito.
 2.  Pages:
     +   Si lo deseas, puedes acceder al archivo a través de githubPages.
 
+            https://giancarissimo.github.io/javascript-58110-proyectoFinal/
+
 ## CARACTERÍSTICAS
 +   Explora una amplia gama de productos de Apple.
 +   Agrega productos al carrito de compras.
@@ -51,6 +53,9 @@ Screenshot tomado del Carrito.
 +   El boton de "finalizar compra" se tradujo al inglés.
 +   El aviso de "tu carrito está vacío" se hizo mas formal.
 +   Se corrigió un problema que generaba que el ordenamiento por 'default' no se ejecute.
+
+## CHANGELOGS 2:
++   Se mejoró la interactividad entre los botones de filtrado y de orden.
 
 ## FUTURAS FUNCIONALIDADES
 +   Agregar contenido a las demas secciones del header.

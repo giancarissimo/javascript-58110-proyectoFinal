@@ -42,7 +42,7 @@ function principal() {
     const botonOrdenarDefault = document.getElementById("ordenarDefault")
     botonOrdenarDefault.addEventListener("click", function (){
         localStorage.removeItem("productos")
-        principal()
+        localStorage.setItem("productos", JSON.stringify(productosOriginal))
         if (filtro != undefined){
             filtrarPorCategoria(filtro)
         }
