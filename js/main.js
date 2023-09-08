@@ -1,10 +1,10 @@
-/*-------------------- Array. --------------------*/
+/*-------------------- Función principal. --------------------*/
 
 principal()
 
 function principal() {
     let filtro
-
+    /*-------------------- Array de los productos --------------------*/
     let productosOriginal = [
         { id: 18, nombre: "Airpods Pro", categoria: "airpods", stock: 6, precio: 249, nombreImagen: "Airpods_Pro.jpeg" },
         { id: 3, nombre: "iPhone 14", categoria: "iphone", stock: 8, precio: 799, nombreImagen: "iPhone14.jpg" },
@@ -40,11 +40,13 @@ function principal() {
     botonOrdenarPrecioAlto.addEventListener("click", () => ordenarPorPrecioAlto(localStorage.productos))
 
     const botonOrdenarDefault = document.getElementById("ordenarDefault")
-    botonOrdenarDefault.addEventListener("click", function (){
+    botonOrdenarDefault.addEventListener("click", function () {
         localStorage.removeItem("productos")
         localStorage.setItem("productos", JSON.stringify(productosOriginal))
-        if (filtro != undefined){
+        if (filtro != undefined) {
             filtrarPorCategoria(filtro)
+        }else{
+            renderizarTarjetas(JSON.parse(localStorage.productos))
         }
     })
 
@@ -55,7 +57,7 @@ function principal() {
         productosOriginal.sort((a, b) => (a.nombre.toLowerCase() > b.nombre.toLowerCase() ? 1 : -1))
         renderizarTarjetas(productosOriginal)
         localStorage.setItem("productos", JSON.stringify(productosOriginal))
-        if (filtro != undefined){
+        if (filtro != undefined) {
             filtrarPorCategoria(filtro)
         }
     }
@@ -65,7 +67,7 @@ function principal() {
         productosOriginal.sort((a, b) => a.precio - b.precio)
         renderizarTarjetas(productosOriginal)
         localStorage.setItem("productos", JSON.stringify(productosOriginal))
-        if (filtro != undefined){
+        if (filtro != undefined) {
             filtrarPorCategoria(filtro)
         }
     }
@@ -75,7 +77,7 @@ function principal() {
         productosOriginal.sort((a, b) => b.precio - a.precio)
         renderizarTarjetas(productosOriginal)
         localStorage.setItem("productos", JSON.stringify(productosOriginal))
-        if (filtro != undefined){
+        if (filtro != undefined) {
             filtrarPorCategoria(filtro)
         }
     }
@@ -101,7 +103,7 @@ function principal() {
     botonFiltrarAccesories.addEventListener("click", () => filtrarPorCategoria("accesories"))
 
     const botonFiltrarTodos = document.getElementById("filtrarTodos")
-    botonFiltrarTodos.addEventListener("click", function() {
+    botonFiltrarTodos.addEventListener("click", function () {
         filtro = undefined
         renderizarTarjetas(JSON.parse(localStorage.productos))
     })
@@ -122,8 +124,16 @@ function principal() {
 
 function renderizarTarjetas(productos) {
     let contenedor = document.getElementById("containerProductos")
+
     contenedor.innerHTML = ""
     productos.forEach(producto => {
+        if (localStorage.getItem("carrito") != undefined) {
+            let carrito = JSON.parse(localStorage.getItem("carrito"))
+            let productoEnCarrito = carrito.find(prodCarrito => prodCarrito.id === producto.id)
+            if (productoEnCarrito != undefined) {
+                producto.stock = productoEnCarrito.stock
+            }
+        }
         let tarjetaProducto = document.createElement("div")
         tarjetaProducto.classList.add("cardProducto")
         tarjetaProducto.innerHTML = `
@@ -159,11 +169,11 @@ function agregarAlCarrito(productos, e) {
     if (productoBuscado.stock > 0) {
         alert("Se agregó el producto al carrito")
         productoBuscado.stock--
-        localStorage.setItem("productos", JSON.stringify(productos))
-        renderizarTarjetas(JSON.parse(localStorage.productos))
+
         if (productoEnCarrito) {
             productoEnCarrito.unidades++
             productoEnCarrito.subtotal = productoEnCarrito.precioUnitario * productoEnCarrito.unidades
+            productoEnCarrito.stock = productoBuscado.stock
         } else {
             carrito.push({
                 id: productoBuscado.id,
@@ -171,13 +181,16 @@ function agregarAlCarrito(productos, e) {
                 precioUnitario: productoBuscado.precio,
                 subtotal: productoBuscado.precio,
                 unidades: 1,
-                imagen: productoBuscado.nombreImagen
+                imagen: productoBuscado.nombreImagen,
+                stock: productoBuscado.stock
             })
         }
+        localStorage.setItem("carrito", JSON.stringify(carrito))
+        renderizarTarjetas(productos)
     } else {
         alert("Ya no quedan unidades")
     }
-    localStorage.setItem("carrito", JSON.stringify(carrito))
+
 }
 
 /*-------------------- Botones desplegables. --------------------*/

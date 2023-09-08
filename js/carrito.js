@@ -50,6 +50,7 @@ function renderizarCarrito() {
 function eliminarDelCarrito(id) {
     let carrito = recuperarCarrito()
     let indiceProducto = carrito.findIndex(producto => producto.id === id)
+    debugger
     let productos = JSON.parse(localStorage.productos)
     let indiceProductos = productos.findIndex(producto => producto.id === id)
 
@@ -58,7 +59,6 @@ function eliminarDelCarrito(id) {
         localStorage.setItem("carrito", JSON.stringify(carrito))
         renderizarCarrito()
         alert(`Se eliminó ${productoEliminado.nombre} del carrito.`)
-        productos[indiceProductos].stock = productos[indiceProductos].stock + productoEliminado.unidades
         localStorage.setItem("productos", JSON.stringify(productos))
         carritoSinNada()
     }
@@ -71,9 +71,8 @@ botonFinalizarCompra.addEventListener("click", finalizarCompra)
 
 function finalizarCompra() {
     let carrito = recuperarCarrito()
-    // let contenedor = document.getElementById("carrito")
     if (carrito.length > 0) {
-        localStorage.removeItem("carrito")
+        localStorage.setItem("carrito",JSON.stringify([]))
         renderizarCarrito()
         alert("Muchas gracias por su compra!")
         carritoSinNada()

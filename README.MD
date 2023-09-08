@@ -57,8 +57,12 @@ Screenshot tomado del Carrito.
 ## CHANGELOGS 2:
 +   Se mejoró la interactividad entre los botones de filtrado y de orden.
 
+## CHANGELOGS 3:
++   Se corrigió un problema que, al añadir un producto al carrito y removerlo/comprarlo (con la tienda de productos filtrada), no mostraba los productos en la store.
+
 ## FUTURAS FUNCIONALIDADES
 +   Agregar contenido a las demas secciones del header.
 +   Estilizar y hacer funcionar la 'lupa' para buscar un producto.
 +   Estilizar, colocar y hacer funcionar el 'total' del carrito.
 +   Mejorar las alerts del sitio.
++   Maquetar el responsive.
