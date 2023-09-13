@@ -18,9 +18,14 @@ Screenshot tomado del Carrito.
 
 ## TECNOLOGÍAS UTILIZADAS
 
-+ HTML5
-+ CSS3
-+ JavaScript
++   HTML5
++   CSS3
++   JavaScript
+
+## LIBRERÍAS UTILIZADAS
+
++   Bootstrap Icons
++   SweetAlert2
 
 ## INSTRUCCIONES DE USO
 
@@ -55,14 +60,19 @@ Screenshot tomado del Carrito.
 +   Se corrigió un problema que generaba que el ordenamiento por 'default' no se ejecute.
 
 ## CHANGELOGS 2:
-+   Se mejoró la interactividad entre los botones de filtrado y de orden.
++   Se mejoró la interactividad entre los botones de filtrado y orden.
 
 ## CHANGELOGS 3:
 +   Se corrigió un problema que, al añadir un producto al carrito y removerlo/comprarlo (con la tienda de productos filtrada), no mostraba los productos en la store.
 
+## CHANGELOGS 4:
++   Se estilizaron las alerts del sitio.
++   Se estilizó, colocó y se hizo funcional el 'total' del carrito.
++   Ahora las cards de los productos tienen decimales en su precio, lo mismo para el subtotal y el total de los productos en el carrito.
+
 ## FUTURAS FUNCIONALIDADES
-+   Agregar contenido a las demas secciones del header.
-+   Estilizar y hacer funcionar la 'lupa' para buscar un producto.
-+   Estilizar, colocar y hacer funcionar el 'total' del carrito.
-+   Mejorar las alerts del sitio.
-+   Maquetar el responsive.
+* [ ]  Agregar contenido a las demas secciones del header.
+* [ ]  Estilizar y hacer funcionar la 'lupa' para buscar un producto.
+* [x]  Estilizar, colocar y hacer funcionar el 'total' del carrito.
+* [x]  Mejorar las alerts del sitio.
+* [ ]  Maquetar el responsive.

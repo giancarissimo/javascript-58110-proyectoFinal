@@ -5,14 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iStore | Carrito</title>
-        <!-- iconos de bootsrap -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-        <!-- css -->
-        <link rel="stylesheet" href="../css/style.css">
-        <!-- js -->
-        <script src="../js/carrito.js" defer></script>
+    <!-- iconos de bootsrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- sweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <!-- js -->
+    <script src="../js/sweetAlert.js" defer></script>
+    <script src="../js/carrito.js" defer></script>
 </head>
-<body onload="renderizarCarrito()">
+<body>
     <header id="header">
         <nav class="navbar">
             <ul>
@@ -62,11 +65,19 @@
             <div class="elemento_invisible_1"></div>
             <div class="elemento_invisible_2"></div>
         </div>
-        <div id="containerCarrito">
-            <h2 id="emptyCartMessage" style="display: none;">Your Bag is empty.</h2>
-            <div id="carrito">
+        <div class="container_containerCarrito">
+            <div id="containerCarrito">
+                <h2 id="emptyCartMessage" style="display: none;">Your Bag is empty.</h2>
+                <div id="carrito">
+                </div>
+                <div id="containerTotal" style="display: none;">
+                    <p>Total</p>
+                    <p id="total"></p>
+                </div>
+                <div class="container_finalizarCompra">
+                    <button id="finalizarCompra" style="display: none;">checkout</button>
+                </div>
             </div>
-            <button id="finalizarCompra" style="display: none;">checkout</button>
         </div>
     </main>
 </body>

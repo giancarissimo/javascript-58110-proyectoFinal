@@ -45,7 +45,7 @@ function principal() {
         localStorage.setItem("productos", JSON.stringify(productosOriginal))
         if (filtro != undefined) {
             filtrarPorCategoria(filtro)
-        }else{
+        } else {
             renderizarTarjetas(JSON.parse(localStorage.productos))
         }
     })
@@ -141,7 +141,7 @@ function renderizarTarjetas(productos) {
         <img class="cardProducto_img" src="./assets/images/store/${producto.nombreImagen}" alt="${producto.nombre}">
         <div class="cardProducto_info">
             <div class="cardProducto_info_text">
-                <h4>From $${producto.precio}.</h4>
+                <h4>From $${parseFloat(producto.precio).toFixed(2)}</h4>
                 <p>${producto.stock} units left</p>
             </div>
             <button id=${producto.id}>add to cart</button>
@@ -167,7 +167,7 @@ function agregarAlCarrito(productos, e) {
     let productoBuscado = productos.find(producto => producto.id === Number(e.target.id))
     let productoEnCarrito = carrito.find(producto => producto.id === productoBuscado.id)
     if (productoBuscado.stock > 0) {
-        alert("Se agregó el producto al carrito")
+        alertas(`${productoBuscado.nombre} was added to your bag.`)
         productoBuscado.stock--
 
         if (productoEnCarrito) {
@@ -188,7 +188,7 @@ function agregarAlCarrito(productos, e) {
         localStorage.setItem("carrito", JSON.stringify(carrito))
         renderizarTarjetas(productos)
     } else {
-        alert("Ya no quedan unidades")
+        alertas(`Sorry, ${productoBuscado.nombre} is currently out of stock. Please check out our other amazing products!`)
     }
 
 }

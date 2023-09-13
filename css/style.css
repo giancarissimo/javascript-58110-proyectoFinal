@@ -1,9 +1,9 @@
 /* -------------------- Varibales para los colores del sitio. -------------------- */
 
-:root{
+:root {
     --clr-main: #f8f4f4;
     --clr-sec: #797575;
-    --clr-white:#ffffff;
+    --clr-white: #ffffff;
     --clr-footer: #d2d2d7;
     --clr-black: #000000;
     --clr-red: #961818;
@@ -13,13 +13,13 @@
 
 /* -------------------- Fuentes para el sitio. -------------------- */
 
-@font-face{
+@font-face {
     font-family: 'sf pro text';
     font-style: normal;
     src: url(../assets/fonts/SF-Pro-Text/SF-Pro-Text-Light.otf);
 }
 
-@font-face{
+@font-face {
     font-family: 'sf pro display';
     font-style: normal;
     src: url(../assets/fonts/SF-Pro-Display/SF-Pro-Display-Semibold.otf);
@@ -27,7 +27,7 @@
 
 /* -------------------- Propiedades de tipo reset. -------------------- */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -35,24 +35,25 @@
     color: var(--clr-black);
 }
 
-html{
+html {
     font-size: 62.5%;
 }
 
 
-ul{
+ul {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-h3, p{
+h3,
+p {
     font-size: 1.7rem;
 }
 
-button{
+button {
     color: var(--clr-white);
     background-color: transparent;
     border: none;
@@ -62,7 +63,7 @@ button{
 
 /* -------------------- Propiedades del body. -------------------- */
 
-body{
+body {
     width: 100vw;
     height: 100vh;
     background-color: var(--clr-main);
@@ -87,7 +88,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* -------------------- Propiedades del Header. -------------------- */
 
-header{
+header {
     position: fixed;
     width: 100vw;
     display: flex;
@@ -100,12 +101,14 @@ header{
     z-index: 3;
 }
 
-.bi-apple, .bi-search, .bi-bag{
+.bi-apple,
+.bi-search,
+.bi-bag {
     width: 1.4rem;
     height: 1.4rem;
 }
 
-.navbar ul{
+.navbar ul {
     height: 4.4rem;
     display: flex;
     justify-content: center;
@@ -113,41 +116,18 @@ header{
     gap: 4.5rem;
 }
 
-.navbar ul li a{
+.navbar ul li a {
     font-size: 1.2rem;
-}
-
-.container_carrito{
-    position: relative;
-}
-
-.notif_carrito{
-    z-index: 4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.contador-productos{
-    width: 1.4rem;
-    height: 1.3rem;
-    /* margin: -.8rem 2rem 0rem .5rem; */
-    margin: -1.05rem 0rem 0rem .5rem;
-    background-color: var(--clr-black);
-    border-radius: 1rem;
-    color: var(--clr-white);
-    font-size: 1rem;
-    text-align: center;
 }
 
 /* -------------------- Propiedades del Main. -------------------- */
 
-main{
+main {
     position: relative;
     top: 4.4rem;
 }
 
-.main_container{
+.main_container {
     width: 100vw;
     display: flex;
     justify-content: space-around;
@@ -158,7 +138,7 @@ main{
 
 /* -------------------- Promo fija abajo del header. -------------------- */
 
-.navbar_promos{
+.navbar_promos {
     width: 100vw;
     height: 5.2rem;
     display: flex;
@@ -167,20 +147,20 @@ main{
     background-color: var(--clr-white);
 }
 
-.navbar_promos p{
+.navbar_promos p {
     font-size: 1.4rem;
 }
 
 /* -------------------- Título de la tienda. -------------------- */
 
-.shop_home{
-    /* padding: 6rem 0rem 0rem 5rem; */
+.shop_home {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.shop_home h1, .shop_home span{
+.shop_home h1,
+.shop_home span {
     font-family: 'sf pro display';
     font-weight: 600;
     font-size: 4.8rem;
@@ -188,18 +168,18 @@ main{
     color: var(--clr-black);
 }
 
-.shop_home span{
+.shop_home span {
     color: var(--clr-sec);
 }
 
 /* -------------------- Botones desplegables (de filtro y de orden). -------------------- */
 
-.container_botones{
+.container_botones {
     display: flex;
     gap: 4rem;
 }
 
-.container_boton{
+.container_boton {
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -208,11 +188,11 @@ main{
     gap: .5rem;
 }
 
-.container_boton button{
+.container_boton button {
     font-size: 12px;
 }
 
-.boton_desplegar{
+.boton_desplegar {
     width: 10rem;
     height: 3rem;
     background-color: var(--clr-blue-alternative);
@@ -224,16 +204,16 @@ main{
     cursor: pointer;
 }
 
-.bi-chevron-down{
+.bi-chevron-down {
     width: 1.4rem;
     height: 1.4rem;
 }
 
-.boton_desplegado{
-display: none;
+.boton_desplegado {
+    display: none;
 }
 
-.boton_desplegado.oculto{
+.boton_desplegado.oculto {
     overflow-y: scroll;
     width: 10rem;
     height: 10rem;
@@ -246,40 +226,40 @@ display: none;
     padding: 1rem 0rem 1rem 1.2rem;
 }
 
-.boton_desplegado::-webkit-scrollbar{
+.boton_desplegado::-webkit-scrollbar {
     width: .9rem;
     background-color: var(--clr-blue-alternative);
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
 }
 
-.boton_desplegado::-webkit-scrollbar-thumb{
+.boton_desplegado::-webkit-scrollbar-thumb {
     background-color: var(--clr-footer);
     border-radius: 2rem;
 }
 
-.boton_desplegado button{
+.boton_desplegado button {
     color: var(--clr-white);
 }
 
 /* -------------------- Cards de los productos. -------------------- */
 
-.container_productos{
-position: relative;
-width: 100vw;
-top: 8vh;
-display: grid;
-grid-auto-rows: 37rem;
-grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-gap: 2rem;
-justify-content: center;
-align-items: center;
-align-content: stretch;
-justify-items: center;
-padding: 0rem 10rem 10rem 10rem;
+.container_productos {
+    position: relative;
+    width: 100vw;
+    top: 8vh;
+    display: grid;
+    grid-auto-rows: 37rem;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    justify-items: center;
+    padding: 0rem 10rem 10rem 10rem;
 }
 
-.cardProducto{
+.cardProducto {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -293,17 +273,17 @@ padding: 0rem 10rem 10rem 10rem;
     transition: all .2s;
 }
 
-.cardProducto h3{
+.cardProducto h3 {
     font-family: 'sf pro display';
     font-size: 2rem;
 }
 
-.cardProducto_img{
+.cardProducto_img {
     width: 100%;
     height: 70%;
 }
 
-.cardProducto_info{
+.cardProducto_info {
     width: 100%;
     height: 12%;
     display: flex;
@@ -311,10 +291,10 @@ padding: 0rem 10rem 10rem 10rem;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
-    gap: 1rem;
+    /* gap: 1rem; */
 }
 
-.cardProducto_info_text{
+.cardProducto_info_text {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -322,17 +302,18 @@ padding: 0rem 10rem 10rem 10rem;
     gap: .4rem;
 }
 
-.cardProducto_info_text h4, .producto_info_text p{
+.cardProducto_info_text h4,
+.producto_info_text p {
     color: var(--clr-black);
     font-size: 1.5rem;
     font-weight: 100;
 }
 
-.cardProducto_info_text p{
+.cardProducto_info_text p {
     font-size: 1.35rem;
 }
 
-.cardProducto_info button{
+.cardProducto_info button {
     width: 7rem;
     height: 3.4rem;
     background-color: var(--clr-blue-alternative);
@@ -344,50 +325,58 @@ padding: 0rem 10rem 10rem 10rem;
     font-weight: 300;
 }
 
-.cardProducto_info button:active{
+.cardProducto_info button:active {
     transform: scale(.9);
 }
 
 /* -------------------- Título del carrito. -------------------- */
 
-.carrito_home{
+.carrito_home {
     width: 100vw;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 2.5rem 0rem 3rem 0rem;
+    padding: 2.5rem 0rem 2rem 0rem;
 }
 
-.carrito_home h1, .carrito_home span{
+.carrito_home h1,
+.carrito_home span {
     font-family: 'sf pro display';
     font-size: 4.8rem;
     font-weight: 600;
     line-height: 1.08;
 }
 
-.carrito_home span{
+.carrito_home span {
     color: var(--clr-sec);
 }
 
 /* -------------------- Propiedades del Carrito. -------------------- */
 
-#containerCarrito{
+.container_containerCarrito{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0rem 0rem 3rem 0rem;
+    padding: 0rem 0rem 2rem 0rem;
 }
 
-#carrito{
+#containerCarrito {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+#carrito {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem 0rem 0rem 0rem;
 }
 
-.producto_carrito{
+.producto_carrito {
     width: 95rem;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -395,37 +384,112 @@ padding: 0rem 10rem 10rem 10rem;
     justify-items: center;
     align-items: center;
     gap: 10rem;
-    margin: 0rem 0rem 2rem 0rem;
-    padding-bottom: 2rem;
+    padding: 2rem 0rem 2rem 0rem;
     border-bottom: .1rem solid var(--clr-footer);
 }
 
-.producto_carrito h3, .producto_carrito p, .producto_carrito h4, .producto_carrito button{
+.producto_carrito h3,
+.producto_carrito p,
+.producto_carrito h4,
+.producto_carrito button {
     font-family: 'sf pro display';
     font-size: 2.2rem;
 }
 
-.producto_carrito_img{
+.producto_carrito_img {
     width: 15rem;
     height: 15rem;
     border-radius: 2rem;
 }
 
-.producto_carrito_containerh3{
+.producto_carrito_containerh3 {
     width: 15rem;
 }
 
-.producto_carrito button{
+.producto_carrito button {
     font-family: 'sf pro text';
     font-size: 1.6rem;
     color: var(--clr-blue-alternative);
 }
 
-#finalizarCompra{
+#containerTotal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#containerTotal p{
+    font-family: 'sf pro display';
+    font-size: 2.2rem;
+}
+
+#containerTotal, .container_finalizarCompra{
+    padding: 0rem .6rem 0rem 0rem;
+}
+
+#finalizarCompra {
     width: 10rem;
     height: 3rem;
     background-color: var(--clr-blue-alternative);
-    border-radius: 2rem;
+    border-radius: 1.2rem;
     color: var(--clr-white);
     text-transform: uppercase;
+}
+
+/* -------------------- Propiedades de Sweet Alert 2. -------------------- */
+
+.swal2-container.swal2-center.sweetAlert_container.swal2-backdrop-show {
+    background: none;
+}
+
+.sweetAlert_container {
+    width: 100vw;
+    height: 100vh;
+    padding: 0rem 0rem 80rem 0rem;
+}
+
+.sweetAlert_popup {
+    height: 5.2rem;
+    border-radius: 0;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.sweetAlert_closeButton:hover {
+    color: var(--clr-white);
+}
+
+.sweetAlert_popup.animation_fadeInUp {
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+.sweetAlert_popup.animation_fadeOutDown {
+    animation: fadeOutDown 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(5rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(5rem);
+    }
 }

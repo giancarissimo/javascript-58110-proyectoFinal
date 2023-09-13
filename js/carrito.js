@@ -10,15 +10,18 @@ carritoSinNada()
 function carritoSinNada() {
     const emptyCartMessage = document.getElementById("emptyCartMessage")
     const botonFinalizarCompra = document.getElementById("finalizarCompra")
+    const infoTotalCarito = document.getElementById("containerTotal")
     const carrito = recuperarCarrito()
 
     if (carrito.length === 0) {
         emptyCartMessage.style.display = "block"
         botonFinalizarCompra.style.display = "none"
+        infoTotalCarito.style.display ="none"
     } else {
         renderizarCarrito()
         botonFinalizarCompra.style.display = "block"
         emptyCartMessage.style.display = "none"
+        infoTotalCarito.style.display ="flex"
     }
 }
 
@@ -26,9 +29,12 @@ function carritoSinNada() {
 
 function renderizarCarrito() {
     let contenedor = document.getElementById("carrito")
+    const total = document.getElementById("total")
     contenedor.innerHTML = ""
     let carrito = recuperarCarrito()
+    let suma = 0
     carrito.forEach(producto => {
+        suma = suma + parseFloat(producto.subtotal)
         let tarjetaProducto = document.createElement("div")
         tarjetaProducto.innerHTML = `
         <div class="producto_carrito">
@@ -37,12 +43,13 @@ function renderizarCarrito() {
                 <h3>${producto.nombre}</h3>
             </div>
             <p>${producto.unidades}</p>
-            <h4>$${producto.subtotal}</h4>
+            <h4>$${parseFloat(producto.subtotal).toFixed(2)}</h4>
             <button onclick="eliminarDelCarrito(${producto.id})">remove</button>
         </div>
         `
         contenedor.appendChild(tarjetaProducto)
     })
+    total.innerText = `$${suma.toFixed(2)}`
 }
 
 /*-------------------- Eliminar un producto del carrito. --------------------*/
@@ -50,7 +57,6 @@ function renderizarCarrito() {
 function eliminarDelCarrito(id) {
     let carrito = recuperarCarrito()
     let indiceProducto = carrito.findIndex(producto => producto.id === id)
-    debugger
     let productos = JSON.parse(localStorage.productos)
     let indiceProductos = productos.findIndex(producto => producto.id === id)
 
@@ -58,7 +64,7 @@ function eliminarDelCarrito(id) {
         const productoEliminado = carrito.splice(indiceProducto, 1)[0]
         localStorage.setItem("carrito", JSON.stringify(carrito))
         renderizarCarrito()
-        alert(`Se eliminó ${productoEliminado.nombre} del carrito.`)
+        alertas(`${productoEliminado.nombre} was removed from your bag.`)
         localStorage.setItem("productos", JSON.stringify(productos))
         carritoSinNada()
     }
@@ -74,7 +80,7 @@ function finalizarCompra() {
     if (carrito.length > 0) {
         localStorage.setItem("carrito",JSON.stringify([]))
         renderizarCarrito()
-        alert("Muchas gracias por su compra!")
+        alertas(`Thank you for your purchase! You will receive an email with your invoice shortly.`)
         carritoSinNada()
     }
 }
