@@ -3,12 +3,11 @@
 :root {
     --clr-main: #f8f4f4;
     --clr-sec: #797575;
-    --clr-white: #ffffff;
     --clr-footer: #d2d2d7;
+    --clr-white: #ffffff;
     --clr-black: #000000;
     --clr-red: #961818;
-    --clr-blue: #4b4bd4;
-    --clr-blue-alternative: #007BFF;
+    --clr-blue: #007BFF;
 }
 
 /* -------------------- Fuentes para el sitio. -------------------- */
@@ -16,13 +15,15 @@
 @font-face {
     font-family: 'sf pro text';
     font-style: normal;
-    src: url(../assets/fonts/SF-Pro-Text/SF-Pro-Text-Light.otf);
+    font-weight: 300;
+    src: url(../assets/fonts/SF-Pro-Text/SF-Pro-Text-Light.woff2) format('woff2'), url(../assets/fonts/SF-Pro-Text/SF-Pro-Text-Light.woff) format('woff'), url(../assets/fonts/SF-Pro-Text/SF-Pro-Text-Light.ttf) format('truetype'), url(../assets/fonts/SF-Pro-Text/SF-Pro-Text-Light.otf) format('openType');
 }
 
 @font-face {
     font-family: 'sf pro display';
     font-style: normal;
-    src: url(../assets/fonts/SF-Pro-Display/SF-Pro-Display-Semibold.otf);
+    font-weight: 600;
+    src: url(../assets/fonts/SF-Pro-Display/SF-Pro-Display-Semibold.woff2) format('woff2'), url(../assets/fonts/SF-Pro-Display/SF-Pro-Display-Semibold.woff) format('woff'), url(../assets/fonts/SF-Pro-Display/SF-Pro-Display-Semibold.ttf) format('truetype'), url(../assets/fonts/SF-Pro-Display/SF-Pro-Display-Semibold.otf) format('openType');
 }
 
 /* -------------------- Propiedades de tipo reset. -------------------- */
@@ -33,18 +34,16 @@
     box-sizing: border-box;
     font-family: 'sf pro text';
     color: var(--clr-black);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 html {
     font-size: 62.5%;
 }
 
-
-ul {
-    list-style: none;
-}
-
+ul,
 a {
+    list-style: none;
     text-decoration: none;
 }
 
@@ -89,35 +88,123 @@ body::-webkit-scrollbar-thumb:hover {
 /* -------------------- Propiedades del Header. -------------------- */
 
 header {
-    position: fixed;
     width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #f8f4f49f;
-    backdrop-filter: blur(1.5rem);
-    -webkit-backdrop-filter: blur(1.5rem);
-    z-index: 3;
-}
-
-.bi-apple,
-.bi-search,
-.bi-bag {
-    width: 1.4rem;
-    height: 1.4rem;
-}
-
-.navbar ul {
     height: 4.4rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4.5rem;
+    z-index: 10;
 }
 
-.navbar ul li a {
+.header_global {
+    background-color: #f8f4f49f;
+    backdrop-filter: blur(1.5rem);
+    -webkit-backdrop-filter: blur(1.5rem);
+    position: fixed;
+    transition: all .8s ease;
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.header_navbar {
+    width: 60rem;
+    height: 4.4rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header_navbar li a {
     font-size: 1.2rem;
+}
+
+.header_icons {
+    width: 9.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_icons svg {
+    cursor: pointer;
+}
+
+.header_logo,
+.header_icons_search,
+.header_icons_bag,
+.header_icons_hamburguer {
+    width: 3rem;
+    height: 4.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-------------------- Propiedades del menú hamburguesa. --------------------*/
+
+.header_icons_hamburguer {
+    display: none;
+}
+
+.menu-icon-container {
+    width: 1.6rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-icon {
+    position: relative;
+    width: 100%;
+}
+
+.menu-icon .line-1,
+.menu-icon .line-2 {
+    position: absolute;
+    width: 100%;
+    height: .2rem;
+    background: black;
+    border-radius: 2rem;
+    transition-property: transform, top;
+    transition-delay: 0ms, 160ms;
+    transition-duration: 200ms;
+    -webkit-transition-property: transform, top;
+    -webkit-transition-delay: 0ms, 160ms;
+    -webkit-transition-duration: 200ms;
+}
+
+.menu-icon .line-1 {
+    top: -4px;
+}
+
+.menu-icon .line-2 {
+    top: 4px;
+}
+
+.menu-icon-container.active .menu-icon .line-1 {
+    top: 0;
+    transform: rotateZ(45deg);
+    transition-property: top, transform;
+    transition-delay: 0ms, 160ms;
+    transition-duration: 200ms;
+    -webkit-transform: rotateZ(45deg);
+    -webkit-transition-property: top, transform;
+    -webkit-transition-delay: 0ms, 160ms;
+    -webkit-transition-duration: 200ms;
+}
+
+.menu-icon-container.active .menu-icon .line-2 {
+    top: 0;
+    transform: rotateZ(-45deg);
+    transition-property: top, transform;
+    transition-delay: 0ms, 160ms;
+    transition-duration: 200ms;
+    -webkit-transform: rotateZ(-45deg);
+    -webkit-transition-property: top, transform;
+    -webkit-transition-delay: 0ms, 160ms;
+    -webkit-transition-duration: 200ms;
 }
 
 /* -------------------- Propiedades del Main. -------------------- */
@@ -162,7 +249,6 @@ main {
 .shop_home h1,
 .shop_home span {
     font-family: 'sf pro display';
-    font-weight: 600;
     font-size: 4.8rem;
     line-height: 1.08;
     color: var(--clr-black);
@@ -195,7 +281,7 @@ main {
 .boton_desplegar {
     width: 10rem;
     height: 3rem;
-    background-color: var(--clr-blue-alternative);
+    background-color: var(--clr-blue);
     border-radius: 2rem;
     display: flex;
     justify-content: center;
@@ -221,14 +307,14 @@ main {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.6rem;
-    background-color: var(--clr-blue-alternative);
+    background-color: var(--clr-blue);
     border-radius: 1.2rem;
     padding: 1rem 0rem 1rem 1.2rem;
 }
 
 .boton_desplegado::-webkit-scrollbar {
     width: .9rem;
-    background-color: var(--clr-blue-alternative);
+    background-color: var(--clr-blue);
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
 }
@@ -291,7 +377,6 @@ main {
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
-    /* gap: 1rem; */
 }
 
 .cardProducto_info_text {
@@ -306,7 +391,7 @@ main {
 .producto_info_text p {
     color: var(--clr-black);
     font-size: 1.5rem;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .cardProducto_info_text p {
@@ -316,17 +401,17 @@ main {
 .cardProducto_info button {
     width: 7rem;
     height: 3.4rem;
-    background-color: var(--clr-blue-alternative);
+    background-color: var(--clr-blue);
     border-radius: 2rem;
     color: var(--clr-main);
     transition: all .03s;
     cursor: pointer;
     text-transform: uppercase;
-    font-weight: 300;
 }
 
 .cardProducto_info button:active {
     transform: scale(.9);
+    -webkit-transform: scale(.9);
 }
 
 /* -------------------- Título del carrito. -------------------- */
@@ -343,7 +428,6 @@ main {
 .carrito_home span {
     font-family: 'sf pro display';
     font-size: 4.8rem;
-    font-weight: 600;
     line-height: 1.08;
 }
 
@@ -353,7 +437,7 @@ main {
 
 /* -------------------- Propiedades del Carrito. -------------------- */
 
-.container_containerCarrito{
+.container_containerCarrito {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -391,7 +475,8 @@ main {
 .producto_carrito h3,
 .producto_carrito p,
 .producto_carrito h4,
-.producto_carrito button {
+.producto_carrito button,
+#containerTotal p {
     font-family: 'sf pro display';
     font-size: 2.2rem;
 }
@@ -406,36 +491,34 @@ main {
     width: 15rem;
 }
 
+.producto_carrito_container_InfoProd {
+    width: 29rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .producto_carrito button {
     font-family: 'sf pro text';
     font-size: 1.6rem;
-    color: var(--clr-blue-alternative);
+    color: var(--clr-blue);
 }
 
-#containerTotal{
+#containerTotal {
+    width: 20rem;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     gap: 2rem;
 }
 
-#containerTotal p{
-    font-family: 'sf pro display';
-    font-size: 2.2rem;
-}
-
-#containerTotal, .container_finalizarCompra{
-    padding: 0rem .6rem 0rem 0rem;
-}
-
 #finalizarCompra {
-    width: 10rem;
-    height: 3rem;
-    background-color: var(--clr-blue-alternative);
-    border-radius: 1.2rem;
+    width: 20rem;
+    height: 4rem;
+    background-color: var(--clr-blue);
+    border-radius: 1.4rem;
     color: var(--clr-white);
-    text-transform: uppercase;
+    font-size: 1.7rem;
 }
 
 /* -------------------- Propiedades de Sweet Alert 2. -------------------- */
@@ -445,9 +528,14 @@ main {
 }
 
 .sweetAlert_container {
+    position: fixed;
     width: 100vw;
     height: 100vh;
-    padding: 0rem 0rem 80rem 0rem;
+    padding: 4.4rem 0rem 0rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .sweetAlert_popup {
@@ -458,8 +546,17 @@ main {
     transition: opacity 0.5s, transform 0.5s;
 }
 
-.sweetAlert_closeButton:hover {
+.sweetAlert_closeButton {
     color: var(--clr-white);
+}
+
+.sweetAlert_closeButton:hover,
+.sweetAlert_closeButton:focus,
+.sweetAlert_closeButton:focus-visible,
+.sweetAlert_closeButton:active {
+    color: var(--clr-white);
+    outline: none;
+    box-shadow: none;
 }
 
 .sweetAlert_popup.animation_fadeInUp {
@@ -491,5 +588,234 @@ main {
     100% {
         opacity: 0;
         transform: translateY(5rem);
+    }
+}
+
+/*-------------------- Propiedades para el responsive. --------------------*/
+
+@media (max-width: 768px) {
+    body.active {
+        overflow: hidden;
+    }
+
+    header {
+        height: 4.8rem;
+    }
+
+    .header_navbar {
+        width: 0rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 3rem;
+        padding: 6rem 0rem 0rem 1rem;
+        z-index: 10;
+        opacity: 0;
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+    }
+
+    .header_navbar li a {
+        font-family: 'sf pro display';
+        font-size: 2.8rem;
+        line-height: 1.1428571429;
+        letter-spacing: .007em;
+    }
+
+    .header_logo,
+    .header_icons_search,
+    .header_icons_bag,
+    .header_icons_hamburguer {
+        width: 4.8rem;
+        height: 4.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+    }
+
+    .header_logo svg,
+    .header_icons_search svg,
+    .header_icons_bag svg {
+        width: 1.7rem;
+        height: 4.8rem;
+    }
+
+    .header_icons {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .menu-icon-container {
+        display: flex;
+    }
+
+    .header_global.active {
+        background-color: var(--clr-white);
+        height: 100vh;
+    }
+
+    .header_logo.active,
+    .header_icons_search.active,
+    .header_icons_bag.active {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .header_navbar.active {
+        transition-delay: .2s;
+        -webkit-transition-delay: .2s;
+        opacity: 1;
+    }
+
+    .navbar_promos p {
+        text-align: center;
+    }
+
+    .main_container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 5rem;
+        padding: 3rem 0rem 0rem 0rem;
+    }
+
+    .producto_carrito {
+        width: 72rem;
+        gap: 4.8rem;
+    }
+
+    .producto_carrito_container_InfoProd {
+        width: 21rem;
+        justify-content: space-around;
+    }
+
+    .sweetAlert_container {
+        padding: 4.8rem 0rem 0rem 0rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .main_container {
+        padding: 2rem 2rem 0rem 2rem;
+    }
+
+    .shop_home h1,
+    .shop_home span {
+        font-size: 3.2rem;
+    }
+
+    .shop_home h1 span br,
+    .carrito_home h1 span br {
+        display: none;
+    }
+
+    .carrito_home {
+        padding: 2rem 0rem 2rem 2rem;
+    }
+
+    .carrito_home h1,
+    .carrito_home span {
+        font-size: 3.2rem;
+    }
+
+    .producto_carrito {
+        width: 36rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 4fr;
+        gap: 3rem;
+    }
+
+    #containerCarrito {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .producto_carrito_containerh3 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .producto_carrito_container_InfoProd,
+    #containerTotal {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 5rem;
+    }
+
+    .producto_carrito_container_InfoProd_unidades {
+        width: 4.663rem;
+        text-align: center;
+    }
+
+    .container_finalizarCompra {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #finalizarCompra {
+        width: 30rem;
+        height: 5rem;
+        border-radius: 1.5rem;
+        font-size: 1.7rem;
+    }
+
+    .sweetAlert_popup {
+        height: 6.5rem;
+    }
+
+    .swal2-popup.swal2-modal.sweetAlert_popup {
+        height: 5.5rem;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div:where(.swal2-container).swal2-html-container {
+        z-index: 1;
+        justify-content: center;
+        margin: 1rem 4rem 1rem;
+        padding: 0;
+        overflow: auto;
+        color: inherit;
+        font-size: 1.125rem;
+        font-weight: normal;
+        line-height: normal;
+        text-align: center;
+        word-wrap: break-word;
+        word-break: break-word;
+        height: 100%;
+    }
+}
+
+@media (max-width: 375px) {
+    .producto_carrito {
+        width: 33rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .navbar_promos {
+        height: 7rem;
+    }
+
+    .producto_carrito {
+        width: 29rem;
+    }
+
+    #finalizarCompra {
+        width: 26rem;
+        height: 4.5rem;
+        border-radius: 1.5rem;
     }
 }

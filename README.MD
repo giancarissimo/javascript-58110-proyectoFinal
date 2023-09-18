@@ -4,17 +4,29 @@
 
 Este proyecto es una tienda en línea inspirada en Apple, donde los usuarios pueden explorar y comprar productos de Apple de manera ficticia. La tienda simula ser una tienda oficial y ofrece una experiencia de compra virtual para productos como Mac, iPhone, iPad, Apple Watch, AirPods y Accesorios.
 
-## CAPTURA DE PANTALLA 1
+## CAPTURA DE PANTALLA 1 - Desktop
 
 ![Screenshot tomado del Home.](assets/images/screens/screen_pagina-inicio.png)
 
 Screenshot tomado del Home.
 
-## CAPTURA DE PANTALLA 2
+## CAPTURA DE PANTALLA 2 - Desktop
 
 ![Screenshot tomado del Carrito.](assets/images/screens/screen_pagina-carrito.png)
 
 Screenshot tomado del Carrito.
+
+## CAPTURA DE PANTALLA 1 - Mobile
+
+![Screenshot tomado del Carrito Mobile.](assets/images/screens/screen_mobile-carrito.png)
+
+Screenshot tomado del Carrito.
+
+## CAPTURA DE PANTALLA 2 - Mobile
+
+![Screenshot tomado Menu Hamburguesa.](assets/images/screens/screen_mobile-hamburguer.png)
+
+Screenshot tomado del Menu Hamburguesa.
 
 ## TECNOLOGÍAS UTILIZADAS
 
@@ -24,7 +36,6 @@ Screenshot tomado del Carrito.
 
 ## LIBRERÍAS UTILIZADAS
 
-+   Bootstrap Icons
 +   SweetAlert2
 
 ## INSTRUCCIONES DE USO
@@ -70,9 +81,21 @@ Screenshot tomado del Carrito.
 +   Se estilizó, colocó y se hizo funcional el 'total' del carrito.
 +   Ahora las cards de los productos tienen decimales en su precio, lo mismo para el subtotal y el total de los productos en el carrito.
 
+## CHANGELOGS 5:
++   Se mejoró el estilo del boton "Finalizar Compra".
++   Se maquetó el header, el carrito, la tienda y las alerts para dispositivos móbiles (tablet & smartphone).
++   Se integró Fetch en Js y se agregaron operadores avanzados (de tipo ternario y &&) para optimizar el código.
++   Ahora la tipografía tiene varios formatos, lo que aumenta la compatibilidad en diferentes dispositivos (Windows, Mac, iOS, Android, etc).
++   Se actualizó la compatibilidad de las animaciones del sitio para diferentes dispositivos.
++   La librería "Bootstrap Icons" se eliminó del proyecto.
++   Las fuentes locales que no se utilizaban, al ocupar almanecamiento, se eliminaron del proyecto para optimizarlo. Ahora de 177mb pasó a 32mb.
+
 ## FUTURAS FUNCIONALIDADES
 * [ ]  Agregar contenido a las demas secciones del header.
 * [ ]  Estilizar y hacer funcionar la 'lupa' para buscar un producto.
 * [x]  Estilizar, colocar y hacer funcionar el 'total' del carrito.
 * [x]  Mejorar las alerts del sitio.
-* [ ]  Maquetar el responsive.
+* [x]  Maquetar el responsive.
+* [x]  Aumentar la compatibilidad de la tipografía y de las animaciones.
+* [x]  Optimizar el almacenamiento.
+* [ ]  Implementar SEO.

@@ -5,7 +5,7 @@ function alertas(text) {
         text: text,
         color: 'var(--clr-white)',
         width: '100vw',
-        background: 'var(--clr-blue-alternative)',
+        background: 'var(--clr-blue)',
         backdrop: true,
         showConfirmButton: false,
         showCloseButton: true,

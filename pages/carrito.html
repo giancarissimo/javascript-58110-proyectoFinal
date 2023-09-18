@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iStore | Carrito</title>
-    <!-- iconos de bootsrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- css -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- sweetAlert2 -->
@@ -14,71 +13,95 @@
     <!-- js -->
     <script src="../js/sweetAlert.js" defer></script>
     <script src="../js/carrito.js" defer></script>
+    <script src="../js/hamburguerMenu.js" defer></script>
 </head>
+
 <body>
-    <header id="header">
-        <nav class="navbar">
-            <ul>
-                <li><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="var(--clr-black)"
-                            class="bi bi-apple" viewBox="0 0 16 16">
-                            <path
-                                d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z" />
-                            <path
-                                d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z" />
-                        </svg></li>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="#">Mac</a></li>
-                <li><a href="#">iPhone</a></li>
-                <li><a href="#">iPad</a></li>
-                <li><a href="#">Watch</a></li>
-                <li><a href="#">Airpods</a></li>
-                <li><a href="#">Accesories</a></li>
-                <li><button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--clr-black)"
-                            class="bi bi-search" viewBox="0 0 16 16">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg></button></li>
+    <header class="header_global">
+        <div class="header_logo">
+            <svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6834-.9089-2.4787-2.0243a9.7842 9.7842 0 0 1 -1.6628-5.2776c0-3.0984 2.014-4.7405 3.9969-4.7405 1.0535 0 1.9314.6919 2.5924.6919.63 0 1.6112-.7333 2.8092-.7333a3.7579 3.7579 0 0 1 3.1604 1.5802zm-3.7284-2.8918a3.5615 3.5615 0 0 0 .8469-2.22 1.5353 1.5353 0 0 0 -.031-.32 3.5686 3.5686 0 0 0 -2.3445 1.2084 3.4629 3.4629 0 0 0 -.8779 2.1585 1.419 1.419 0 0 0 .031.2892 1.19 1.19 0 0 0 .2169.0207 3.0935 3.0935 0 0 0 2.1586-1.1368z">
+                </path>
+            </svg>
+        </div>
+        <nav>
+            <ul class="header_navbar">
                 <li>
-                    <a href="carrito.html">
-                        <div class="container_carrito">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--clr-black)"
-                                class="bi bi-bag" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                            </svg>
-                            <div class="notif_carrito.oculto">
-                                <span id="contadorProductos" class="contador-productos.oculto"></span>
-                            </div>
-                        </div>
-                    </a>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#">Mac</a>
+                </li>
+                <li>
+                    <a href="#">iPhone</a>
+                </li>
+                <li>
+                    <a href="#">iPad</a>
+                </li>
+                <li>
+                    <a href="#">Watch</a>
+                </li>
+                <li>
+                    <a href="#">Airpods</a>
+                </li>
+                <li>
+                    <a href="#">Accesories</a>
                 </li>
             </ul>
         </nav>
+        <div class="header_icons">
+            <div class="header_icons_search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="44px" viewBox="0 0 15 44">
+                    <path
+                        d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z">
+                    </path>
+                </svg>
+            </div>
+            <div class="header_icons_bag">
+                <a href="carrito.html">
+                    <svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2.1186 0 0 0 2.1162 2.1167h8.707a2.1186 2.1186 0 0 0 2.1168-2.1167v-7.7155a2.1184 2.1184 0 0 0 -2.1165-2.1162zm-4.3535-1.8652a2.3169 2.3169 0 0 1 2.2222 1.8652h-4.4444a2.3169 2.3169 0 0 1 2.2222-1.8652zm5.37 11.6969a1.0182 1.0182 0 0 1 -1.0166 1.0171h-8.7069a1.0182 1.0182 0 0 1 -1.0165-1.0171v-7.7155a1.0178 1.0178 0 0 1 1.0166-1.0166h8.707a1.0178 1.0178 0 0 1 1.0164 1.0166z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <div class="header_icons_hamburguer">
+                <div class="menu-icon-container">
+                    <div class="menu-icon">
+                        <span class="line-1"></span>
+                        <span class="line-2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
         <div class="navbar_promos">
             <p>Get $200–$640 in credit toward iPhone 14 or iPhone 14 Pro when you trade in iPhone 11 or higher.</p>
         </div>
         <div>
-        <div class="carrito_home">
-            <h1>Review your Bag. <span>Free delivery<br>and free returns.</span></h1>
-            <div class="elemento_invisible_1"></div>
-            <div class="elemento_invisible_2"></div>
-        </div>
-        <div class="container_containerCarrito">
-            <div id="containerCarrito">
-                <h2 id="emptyCartMessage" style="display: none;">Your Bag is empty.</h2>
-                <div id="carrito">
-                </div>
-                <div id="containerTotal" style="display: none;">
-                    <p>Total</p>
-                    <p id="total"></p>
-                </div>
-                <div class="container_finalizarCompra">
-                    <button id="finalizarCompra" style="display: none;">checkout</button>
+            <div class="carrito_home">
+                <h1>Review your Bag. <span>Free delivery<br> and free returns.</span></h1>
+                <div class="elemento_invisible_1"></div>
+                <div class="elemento_invisible_2"></div>
+            </div>
+            <div class="container_containerCarrito">
+                <div id="containerCarrito">
+                    <h2 id="emptyCartMessage" style="display: none;">Your Bag is empty.</h2>
+                    <div id="carrito">
+                    </div>
+                    <div id="containerTotal" style="display: none;">
+                        <p>Total</p>
+                        <p id="total"></p>
+                    </div>
+                    <div class="container_finalizarCompra">
+                        <button id="finalizarCompra" style="display: none;">Check Out</button>
+                    </div>
                 </div>
             </div>
-        </div>
     </main>
 </body>
+
 </html>

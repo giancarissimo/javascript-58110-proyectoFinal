@@ -16,12 +16,12 @@ function carritoSinNada() {
     if (carrito.length === 0) {
         emptyCartMessage.style.display = "block"
         botonFinalizarCompra.style.display = "none"
-        infoTotalCarito.style.display ="none"
+        infoTotalCarito.style.display = "none"
     } else {
         renderizarCarrito()
         botonFinalizarCompra.style.display = "block"
         emptyCartMessage.style.display = "none"
-        infoTotalCarito.style.display ="flex"
+        infoTotalCarito.style.display = "flex"
     }
 }
 
@@ -42,9 +42,13 @@ function renderizarCarrito() {
             <div class="producto_carrito_containerh3">
                 <h3>${producto.nombre}</h3>
             </div>
-            <p>${producto.unidades}</p>
-            <h4>$${parseFloat(producto.subtotal).toFixed(2)}</h4>
-            <button onclick="eliminarDelCarrito(${producto.id})">remove</button>
+            <div class="producto_carrito_container_InfoProd">
+                <div class="producto_carrito_container_InfoProd_unidades">
+                    <p>${producto.unidades}</p>
+                </div>
+                <h4>$${parseFloat(producto.subtotal).toFixed(2)}</h4>
+            </div>
+            <button onclick="eliminarDelCarrito(${producto.id})">Remove</button>
         </div>
         `
         contenedor.appendChild(tarjetaProducto)
@@ -78,7 +82,7 @@ botonFinalizarCompra.addEventListener("click", finalizarCompra)
 function finalizarCompra() {
     let carrito = recuperarCarrito()
     if (carrito.length > 0) {
-        localStorage.setItem("carrito",JSON.stringify([]))
+        localStorage.setItem("carrito", JSON.stringify([]))
         renderizarCarrito()
         alertas(`Thank you for your purchase! You will receive an email with your invoice shortly.`)
         carritoSinNada()
