@@ -90,6 +90,9 @@ Screenshot tomado del Menu Hamburguesa.
 +   La librería "Bootstrap Icons" se eliminó del proyecto.
 +   Las fuentes locales que no se utilizaban, al ocupar almanecamiento, se eliminaron del proyecto para optimizarlo. Ahora de 177mb pasó a 32mb.
 
+## CHANGELOGS 6:
++   Se actualizó el máximo del viewport-width para dispositivos móviles (de 425px a 450px). De ésta manera, ahora por ej el sitio está responsive para dispositivos como el iPhone 13, 14 y 15 Pro Max y otros dispositivos de mismas resoluciones.
+
 ## FUTURAS FUNCIONALIDADES
 * [ ]  Agregar contenido a las demas secciones del header.
 * [ ]  Estilizar y hacer funcionar la 'lupa' para buscar un producto.
