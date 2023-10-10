@@ -114,7 +114,7 @@ Este proyecto es una tienda en línea inspirada en Apple, donde los usuarios pue
 +   La librería "Bootstrap Icons" se eliminó del proyecto.
 +   Las fuentes locales que no se utilizaban, al ocupar almanecamiento, se eliminaron del proyecto para optimizarlo. Ahora de 177mb pasó a 32mb.
 
-## CHANGELOGS 6:
+## CHANGELOGS 7:
 +   Se actualizó el máximo del viewport-width para dispositivos móviles (de 425px a 450px). De ésta manera, ahora por ej el sitio está responsive para dispositivos como el iPhone 13, 14 y 15 Pro Max y otros dispositivos de mismas resoluciones.
 
 ## CHANGELOGS 6:
