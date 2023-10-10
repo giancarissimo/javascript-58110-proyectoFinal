@@ -152,25 +152,62 @@ function agregarAlCarrito(productos, e) {
         }
         localStorage.setItem("carrito", JSON.stringify(carrito))
         renderizarTarjetas(productos)
+        notificacionCarrito()
     } else {
         alertas(`Sorry, ${productoBuscado.nombre} is currently out of stock.`)
     }
 }
 
-/*-------------------- Botones desplegables. --------------------*/
+/*-------------------- Botones desplegables --------------------*/
 
-const botonDesplegarFilter = document.getElementById('botonDesplegarFilter')
-const botonDesplegadoFilter = document.getElementById('botonDesplegadoFilter')
+const botonesDesplegar = document.querySelectorAll('.boton_desplegar')
+const menusDesplegados = document.querySelectorAll('.boton_desplegado')
 
-botonDesplegarFilter.addEventListener('click', () => {
-    botonDesplegadoFilter.classList.toggle('oculto')
+botonesDesplegar.forEach((botonDesplegar, index) => {
+    botonDesplegar.addEventListener('click', (event) => {
+
+        botonDesplegar.classList.toggle('active')
+        menusDesplegados[index].classList.toggle('active')
+
+        const ripple = document.createElement('span')
+        const rect = botonDesplegar.getBoundingClientRect()
+        const size = Math.max(rect.width, rect.height)
+        const x = event.clientX - rect.left - size / 2
+        const y = event.clientY - rect.top - size / 2
+
+        ripple.style.width = ripple.style.height = `${size}px`
+        ripple.style.left = `${x}px`
+        ripple.style.top = `${y}px`
+
+        ripple.classList.add('ripple')
+
+        const existingRipple = botonDesplegar.querySelector('.ripple')
+        if (existingRipple) {
+            existingRipple.remove()
+        }
+
+        botonDesplegar.appendChild(ripple)
+    })
 })
 
-const botonDesplegarOrder = document.getElementById('botonDesplegarOrder')
-const botonDesplegadoOrder = document.getElementById('botonDesplegadoOrder')
+menusDesplegados.forEach((menuDesplegado) => {
+    menuDesplegado.addEventListener('click', (event) => {
+        if (event.target.tagName === 'BUTTON') {
+            // Se hizo clic en una opción del menú, cierra el menú
+            const index = Array.from(menusDesplegados).indexOf(menuDesplegado)
+            botonesDesplegar[index].classList.remove('active')
+            menuDesplegado.classList.remove('active')
+        }
+    })
+})
 
-botonDesplegarOrder.addEventListener('click', () => {
-    botonDesplegadoOrder.classList.toggle('oculto')
+document.addEventListener('click', (event) => {
+    botonesDesplegar.forEach((botonDesplegar, index) => {
+        if (!menusDesplegados[index].contains(event.target) && !botonDesplegar.contains(event.target)) {
+            botonDesplegar.classList.remove('active')
+            menusDesplegados[index].classList.remove('active')
+        }
+    })
 })
 
 /*-------------------- Llamando al array de productos con fetch. --------------------*/

@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../assets/images/svg/favicon.svg" />
     <title>iStore | Carrito</title>
     <!-- css -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-dark.css">
     <!-- sweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <!-- js -->
     <script src="../js/sweetAlert.js" defer></script>
     <script src="../js/carrito.js" defer></script>
-    <script src="../js/hamburguerMenu.js" defer></script>
+    <script src="../js/header.js" defer></script>
 </head>
 
 <body>
@@ -65,6 +67,7 @@
                             d="m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2.1186 0 0 0 2.1162 2.1167h8.707a2.1186 2.1186 0 0 0 2.1168-2.1167v-7.7155a2.1184 2.1184 0 0 0 -2.1165-2.1162zm-4.3535-1.8652a2.3169 2.3169 0 0 1 2.2222 1.8652h-4.4444a2.3169 2.3169 0 0 1 2.2222-1.8652zm5.37 11.6969a1.0182 1.0182 0 0 1 -1.0166 1.0171h-8.7069a1.0182 1.0182 0 0 1 -1.0165-1.0171v-7.7155a1.0178 1.0178 0 0 1 1.0166-1.0166h8.707a1.0178 1.0178 0 0 1 1.0164 1.0166z">
                         </path>
                     </svg>
+                    <span id="headerIconsBagNotification" class="header_icons_bag_notification"></span>
                 </a>
             </div>
             <div class="header_icons_hamburguer">
@@ -75,32 +78,100 @@
                     </div>
                 </div>
             </div>
+            <div class="header_theme_changer_container">
+                <div id="buttonThemeChanger" class="header_theme_changer">
+                    <button></button>
+                </div>
+            </div>
+        </div>
+        <div class="header_search_container_total">
+            <div class="header_search_container">
+                <form action="">
+                    <svg height="32" viewBox="0 0 30 32" width="30" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m23.3291 23.3066-4.35-4.35c-.0105-.0105-.0247-.0136-.0355-.0235a6.8714 6.8714 0 1 0 -1.5736 1.4969c.0214.0256.03.0575.0542.0815l4.35 4.35a1.1 1.1 0 1 0 1.5557-1.5547zm-15.4507-8.582a5.6031 5.6031 0 1 1 5.603 5.61 5.613 5.613 0 0 1 -5.603-5.61z">
+                        </path>
+                    </svg>
+                    <input placeholder="Search apple.com" aria-label="Search apple.com" autocorrect="off"
+                        autocapitalize="off" autocomplete="off" class="header_search_container_input">
+                </form>
+                <div class="header_search_container_results">
+                    <h6>Quick Links</h6>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span><svg height="16" viewBox="0 0 9 16" width="9" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="m8.6124 8.1035-2.99 2.99a.5.5 0 0 1 -.7071-.7071l2.1366-2.1364h-6.316a.5.5 0 0 1 0-1h6.316l-2.1368-2.1367a.5.5 0 0 1 .7071-.7071l2.99 2.99a.5.5 0 0 1 .0002.7073z">
+                                        </path>
+                                    </svg>Find a Store</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span><svg height="16" viewBox="0 0 9 16" width="9" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="m8.6124 8.1035-2.99 2.99a.5.5 0 0 1 -.7071-.7071l2.1366-2.1364h-6.316a.5.5 0 0 1 0-1h6.316l-2.1368-2.1367a.5.5 0 0 1 .7071-.7071l2.99 2.99a.5.5 0 0 1 .0002.7073z">
+                                        </path>
+                                    </svg>Mac</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span><svg height="16" viewBox="0 0 9 16" width="9" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="m8.6124 8.1035-2.99 2.99a.5.5 0 0 1 -.7071-.7071l2.1366-2.1364h-6.316a.5.5 0 0 1 0-1h6.316l-2.1368-2.1367a.5.5 0 0 1 .7071-.7071l2.99 2.99a.5.5 0 0 1 .0002.7073z">
+                                        </path>
+                                    </svg>iPhone</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span><svg height="16" viewBox="0 0 9 16" width="9" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="m8.6124 8.1035-2.99 2.99a.5.5 0 0 1 -.7071-.7071l2.1366-2.1364h-6.316a.5.5 0 0 1 0-1h6.316l-2.1368-2.1367a.5.5 0 0 1 .7071-.7071l2.99 2.99a.5.5 0 0 1 .0002.7073z">
+                                        </path>
+                                    </svg>Watch</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span><svg height="16" viewBox="0 0 9 16" width="9" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="m8.6124 8.1035-2.99 2.99a.5.5 0 0 1 -.7071-.7071l2.1366-2.1364h-6.316a.5.5 0 0 1 0-1h6.316l-2.1368-2.1367a.5.5 0 0 1 .7071-.7071l2.99 2.99a.5.5 0 0 1 .0002.7073z">
+                                        </path>
+                                    </svg>Apple Trade In</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
     <main>
+        <div class="header_search_blur"></div>
         <div class="navbar_promos">
             <p>Get $200–$640 in credit toward iPhone 14 or iPhone 14 Pro when you trade in iPhone 11 or higher.</p>
         </div>
-        <div>
-            <div class="carrito_home">
-                <h1>Review your Bag. <span>Free delivery<br> and free returns.</span></h1>
-                <div class="elemento_invisible_1"></div>
-                <div class="elemento_invisible_2"></div>
-            </div>
-            <div class="container_containerCarrito">
-                <div id="containerCarrito">
-                    <h2 id="emptyCartMessage" style="display: none;">Your Bag is empty.</h2>
-                    <div id="carrito">
-                    </div>
-                    <div id="containerTotal" style="display: none;">
-                        <p>Total</p>
-                        <p id="total"></p>
-                    </div>
-                    <div class="container_finalizarCompra">
-                        <button id="finalizarCompra" style="display: none;">Check Out</button>
-                    </div>
+        <div class="carrito_home">
+            <h1>Review your Bag. <span>Free delivery<br> and free returns.</span></h1>
+            <div class="elemento_invisible_1"></div>
+            <div class="elemento_invisible_2"></div>
+        </div>
+        <div class="container_containerCarrito">
+            <div id="containerCarrito">
+                <h2 id="emptyCartMessage" style="display: none;">Your Bag is empty.</h2>
+                <div id="carrito">
+                </div>
+                <div id="containerTotal" style="display: none;">
+                    <p>Total</p>
+                    <p id="total"></p>
+                </div>
+                <div class="container_finalizarCompra">
+                    <button id="finalizarCompra" style="display: none;">Check Out</button>
                 </div>
             </div>
+        </div>
     </main>
 </body>
 

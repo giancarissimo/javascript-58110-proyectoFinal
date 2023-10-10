@@ -1,0 +1,274 @@
+/* -------------------- Transición Light-to-Dark Theme. -------------------- */
+
+body,
+.header_global,
+.header_navbar li a,
+.header_logo,
+.header_icons_search,
+.header_icons_bag,
+.header_icons_hamburguer,
+.header_theme_changer_container,
+.header_icons_bag a,
+.header_icons_bag_notification,
+.header_search_container_input,
+.header_search_container_results ul li a span,
+.header_search_blur,
+.navbar_promos,
+.navbar_promos p,
+.shop_home h1,
+.shop_home span,
+.cardProducto,
+.cardProducto h3,
+.cardProducto_info_text h4,
+.cardProducto_info_text p,
+.cardProducto_img,
+.carrito_home h1,
+.carrito_home span,
+#containerCarrito h2,
+.producto_carrito h3,
+.producto_carrito p,
+.producto_carrito h4,
+.producto_carrito button,
+#containerTotal p {
+    transition: background-color .5s ease, color .5s ease, fill .5s ease;
+    -webkit-transition: background-color .5s ease, color .5s ease, fill .5s ease;
+}
+
+.header_global,
+.header_global.active {
+    transition: background-color .5s ease, color .5s ease, fill .5s ease, height .3 ease;
+    transition-delay: 0ms, 0ms, 0ms, 215ms;
+    -webkit-transition: background-color .5s ease, color .5s ease, fill .5s ease, height .3s ease;
+    -webkit-transition-delay: 0ms, 0ms, 0ms, 215ms;
+}
+
+.header_global.active {
+    transition: background-color .5s ease, color .5s ease, fill .5s ease, height .3s;
+    transition-delay: 0ms, 0ms, 0ms, 50ms;
+    -webkit-transition: background-color .5s ease, color .5s ease, fill .5s ease, height .3s ease;
+    -webkit-transition-delay: 0ms, 0ms, 0ms, 50ms;
+}
+
+.header_search_blur {
+    opacity: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(232, 232, 237, .4);
+    backdrop-filter: blur(2rem);
+    transition: opacity 350ms;
+    -webkit-backdrop-filter: blur(2rem);
+    -webkit-transition: opacity 350ms;
+}
+
+/* -------------------- Body. -------------------- */
+
+body.dark {
+    background-color: var(--clr-main-dark);
+}
+
+/* -------------------- Header. -------------------- */
+
+body.dark .header_global {
+    background-color: var(--clr-header-dark);
+    /* border-bottom: .1rem solid rgba(73, 73, 73, 1); */
+}
+
+body.dark .header_global.active {
+    background-color: var(--clr-header-dark-active);
+}
+
+body.dark .header_navbar li a {
+    color: var(--clr-header-dark-items);
+}
+
+body.dark .header_logo,
+body.dark .header_icons_search,
+body.dark .header_icons_bag a {
+    fill: var(--clr-header-dark-items);
+    transition: all .5s ease;
+}
+
+body.dark .header_icons_bag_notification {
+    background-color: var(--clr-white);
+    color: var(--clr-black);
+}
+
+body.dark .header_search_container form svg,
+body.dark .header_search_container_input::placeholder,
+body.dark .header_search_container_results h6,
+body.dark .header_search_container_results ul li,
+.header_search_container_results ul li a span svg {
+    color: var(--clr-search-navbar-dark-items);
+    fill: var(--clr-search-navbar-dark-items);
+}
+
+body.dark .header_search_container_input {
+    color: var(--clr-white);
+}
+
+body.dark .header_search_container_results ul li:hover {
+    background-color: var(--clr-search-navbar-dark-items-hover);
+}
+
+body.dark .header_search_container_results ul li:hover a span svg {
+    fill: var(--clr-white);
+}
+
+body.dark .header_search_container_results ul li a span {
+    color: var(--clr-white);
+}
+
+body.dark .header_search_blur,
+body.dark .header_search_blur.active {
+    background: rgba(0, 0, 0, .4);
+}
+
+body.dark .menu-icon-container .menu-icon .line-1,
+body.dark .menu-icon-container .menu-icon .line-2 {
+    background: var(--clr-header-dark-hamburger-menu);
+}
+
+body.dark .menu-icon-container.active .menu-icon .line-1,
+body.dark .menu-icon-container.active .menu-icon .line-2 {
+    background: var(--clr-white);
+}
+
+body.dark .header_navbar li a:hover,
+body.dark .header_logo:hover,
+body.dark .header_icons_search:hover,
+body.dark .header_icons_bag a:hover {
+    color: var(--clr-white);
+    fill: var(--clr-white);
+}
+
+/* -------------------- Promo fija abajo del header. -------------------- */
+
+body.dark .navbar_promos {
+    background-color: var(--clr-navbar-promos-dark);
+}
+
+body.dark .navbar_promos p {
+    color: var(--clr-white);
+}
+
+/* -------------------- Título de la Store y del Carrito. -------------------- */
+
+body.dark .shop_home h1,
+body.dark .carrito_home h1 {
+    color: var(--clr-white);
+}
+
+body.dark .shop_home span,
+body.dark .carrito_home span {
+    color: var(--clr-sec-dark);
+}
+
+/* -------------------- Botones desplegables (de filtro y de orden). -------------------- */
+
+body.dark #botonDesplegadoFilter,
+body.dark #botonDesplegadoOrder {
+    background-color: rgba(24, 24, 27, 1);
+    border: none;
+    box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, .03),
+        0rem .2rem 3rem 0rem rgba(0, 0, 0, .03),
+        inset 0rem 0rem .1rem 0rem hsla(0, 0%, 100%, .15);
+}
+
+body.dark .boton_desplegado button {
+    color: var(--clr-white);
+}
+
+body.dark .boton_desplegado button:nth-child(7),
+body.dark .boton_desplegado button[id^="ordenarDefault"] {
+    color: var(--clr-red);
+}
+
+body.dark .boton_desplegado button:nth-child(7):hover,
+body.dark .boton_desplegado button[id^="ordenarDefault"]:hover {
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+}
+
+/* -------------------- Cards de los Productos. -------------------- */
+
+body.dark .cardProducto {
+    background-color: var(--clr-navbar-promos-dark);
+    box-shadow: 0.3em 0.3em 1em rgba(41, 39, 39, 0.3);
+}
+
+body.dark .cardProducto h3 {
+    color: var(--clr-white);
+}
+
+body.dark .cardProducto_info_text h4,
+body.dark .cardProducto_info_text p {
+    color: var(--clr-white);
+}
+
+/* -------------------- Propiedades del Carrito. -------------------- */
+
+body.dark #containerCarrito h2 {
+    color: var(--clr-white);
+}
+
+body.dark .producto_carrito h3,
+body.dark .producto_carrito p,
+body.dark .producto_carrito h4,
+body.dark .producto_carrito button,
+body.dark #containerTotal p {
+    color: var(--clr-white);
+}
+
+body.dark .producto_carrito {
+    border-bottom: .1rem solid #424245;
+}
+
+body.dark .producto_carrito button {
+    color: var(--clr-blue);
+}
+
+/* -------------------- Propiedades para Dispositivos Móviles. -------------------- */
+
+@media (max-width: 768px) {
+
+    .header_global,
+    .header_global.active {
+        transition: background-color .5s ease, height .5s ease;
+        transition-delay: 150ms, 150ms;
+        -webkit-transition: background-color .5s ease, height .5s ease;
+        -webkit-transition-delay: 150ms, 150ms;
+    }
+
+    .header_global.active {
+        transition-delay: 0ms, 150ms;
+        -webkit-transition-delay: 0ms, 150ms;
+    }
+
+    body.dark .header_navbar li a {
+        color: var(--clr-white);
+    }
+
+    .header_logo,
+    .header_icons_search,
+    .header_icons_bag,
+    .header_icons_hamburguer,
+    .header_theme_changer_container {
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+    }
+
+    body.dark .header_global.active {
+        background-color: var(--clr-header-dark-active);
+    }
+
+    body.dark .boton_desplegado button:hover {
+        background-color: transparent;
+    }
+
+    body.dark .boton_desplegado button:nth-child(7):hover,
+    body.dark .boton_desplegado button[id^="ordenarDefault"]:hover {
+        background-color: transparent;
+        color: var(--clr-red);
+    }
+}

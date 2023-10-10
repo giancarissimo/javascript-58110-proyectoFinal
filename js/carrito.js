@@ -68,6 +68,7 @@ function eliminarDelCarrito(id) {
         const productoEliminado = carrito.splice(indiceProducto, 1)[0]
         localStorage.setItem("carrito", JSON.stringify(carrito))
         renderizarCarrito()
+        notificacionCarrito()
         alertas(`${productoEliminado.nombre} was removed from your bag.`)
         localStorage.setItem("productos", JSON.stringify(productos))
         carritoSinNada()
@@ -84,6 +85,7 @@ function finalizarCompra() {
     if (carrito.length > 0) {
         localStorage.setItem("carrito", JSON.stringify([]))
         renderizarCarrito()
+        notificacionCarrito()
         alertas(`Thank you for your purchase! You will receive an email with your invoice shortly.`)
         carritoSinNada()
     }

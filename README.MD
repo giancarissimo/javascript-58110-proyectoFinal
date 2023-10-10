@@ -4,29 +4,53 @@
 
 Este proyecto es una tienda en línea inspirada en Apple, donde los usuarios pueden explorar y comprar productos de Apple de manera ficticia. La tienda simula ser una tienda oficial y ofrece una experiencia de compra virtual para productos como Mac, iPhone, iPad, Apple Watch, AirPods y Accesorios.
 
-## CAPTURA DE PANTALLA 1 - Desktop
+## SCREENSHOTS - Desktop Light
 
-![Screenshot tomado del Home.](assets/images/screens/screen_pagina-inicio.png)
++   Screenshot tomado del Home:
 
-Screenshot tomado del Home.
+![Screenshot tomado del Home.](assets/images/screens/screen_pagina-store-light.png)
 
-## CAPTURA DE PANTALLA 2 - Desktop
+![Screenshot tomado del Search.](assets/images/screens/screen_search-light.png)
 
-![Screenshot tomado del Carrito.](assets/images/screens/screen_pagina-carrito.png)
++   Screenshot tomado del Carrito:
 
-Screenshot tomado del Carrito.
+![Screenshot tomado del Carrito.](assets/images/screens/screen_pagina-carrito-light.png)
 
-## CAPTURA DE PANTALLA 1 - Mobile
+## SCREENSHOTS - Desktop Dark
 
-![Screenshot tomado del Carrito Mobile.](assets/images/screens/screen_mobile-carrito.png)
++   Screenshot tomado del Home:
 
-Screenshot tomado del Carrito.
+![Screenshot tomado del Home (Dark).](assets/images/screens/screen_pagina-store-dark.png)
 
-## CAPTURA DE PANTALLA 2 - Mobile
+![Screenshot tomado del Search (Dark).](assets/images/screens/screen_search-dark.png)
 
-![Screenshot tomado Menu Hamburguesa.](assets/images/screens/screen_mobile-hamburguer.png)
++   Screenshot tomado del Carrito:
 
-Screenshot tomado del Menu Hamburguesa.
+![Screenshot tomado del Carrito (Dark).](assets/images/screens/screen_pagina-carrito-dark.png)
+
+## SREENSHOTS - Mobile Light
+
++   Screenshot tomado del Home:
+
+![Screenshot tomado del Home (Mobile-Light).](assets/images/screens/screen_pagina-store-mobile-light.png)
+
+![Screenshot tomado del Menu Hamburguesa (Mobile-Light).](assets/images/screens/screen_mobile-hamburguer-light.png)
+
++   Screenshot tomado del Carrito:
+
+![Screenshot tomado del Carrito (Mobile-Light).](assets/images/screens/screen_pagina-carrito-mobile-light.png)
+
+## SCREENSHOTS - Mobile Dark
+
++   Screenshot tomado del Home:
+
+![Screenshot tomado del Home (Mobile-Dark).](assets/images/screens/screen_pagina-store-mobile-dark.png)
+
+![Screenshot tomado del Menu Hamburguesa (Mobile-Dark).](assets/images/screens/screen_mobile-hamburguer-dark.png)
+
++   Screenshot tomado del Carrito:
+
+![Screenshot tomado del Carrito (Mobile-Dark).](assets/images/screens/screen_pagina-carrito-mobile-dark.png)
 
 ## TECNOLOGÍAS UTILIZADAS
 
@@ -93,12 +117,31 @@ Screenshot tomado del Menu Hamburguesa.
 ## CHANGELOGS 6:
 +   Se actualizó el máximo del viewport-width para dispositivos móviles (de 425px a 450px). De ésta manera, ahora por ej el sitio está responsive para dispositivos como el iPhone 13, 14 y 15 Pro Max y otros dispositivos de mismas resoluciones.
 
+## CHANGELOGS 6:
++   Se reemplazó la imagen del iphone 14 (que originalmente era una foto del iphone 13) por una del producto que corresponde.
+
++   Se agregó una notificación en el ícono del carrito: Si agregamos un producto, además de la notificación, obtendremos un iconito con la cantidad de productos y/o unidades del mismo que agregamos al carrito.
+
++   Se mejoró el funcionamiento y estilización de los botones de filtrado y orden: Ahora si se clickea fuera de un botón, el menú desplegable del mismo, se cierra.
+
++   Se integró un botón en el header para intercambiar entre el Light & Dark Theme: Éstos, se almacenan en localStorage para que, si el usuario desesa refrescar la página, se guarde el modo que el usuario eligió previamente.
+
++   Se mejoraron las animaciones del menú hamburguesa: Ahora cuando se despliega y se cierra, cada opcion de la navbar tiene una animacion y retraso personalizado para que de un efecto de "cascada".
+
++   Se estilizó y maquetó el Search del sitio: Si se toca en el ícono 'search' se despliega un menu con opciones sugeridas y un input de búsqueda. Este menu, contiene una animación de apertura y cierre.
+
++   Se mejoró el algoritmo del menu hamburguesa: Está integrado con el 'search'. Si el menu search se despliega, el icono del menu hamburguesa se activa (y queda en su respectiva X), si se presiona nuevamente, se cierra el icono menú hamburguesa y el menu del search, pero si se presiona el hamburguesa de nuevo, se despliega la navbar.
+
++   Se creó header.js: Éste, contendrá la lógica de la notificación del carrito, boton 'Light-Dark theme', menú 'hamburguesa' y 'search'.
++   Se colocó un favicon para el sitio.
+
 ## FUTURAS FUNCIONALIDADES
 * [ ]  Agregar contenido a las demas secciones del header.
-* [ ]  Estilizar y hacer funcionar la 'lupa' para buscar un producto.
+* [ ]  Hacer funcionar la 'lupa' para buscar un producto o una sección del sitio web.
 * [x]  Estilizar, colocar y hacer funcionar el 'total' del carrito.
 * [x]  Mejorar las alerts del sitio.
 * [x]  Maquetar el responsive.
 * [x]  Aumentar la compatibilidad de la tipografía y de las animaciones.
+* [x]  Alternar entre Light & Dark Theme en el sitio.
 * [x]  Optimizar el almacenamiento.
 * [ ]  Implementar SEO.
