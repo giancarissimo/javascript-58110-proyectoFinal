@@ -87,6 +87,7 @@ body.dark .header_icons_search,
 body.dark .header_icons_bag a {
     fill: var(--clr-header-dark-items);
     transition: all .5s ease;
+    -webkit-transition: all .5s ease;
 }
 
 body.dark .header_icons_bag_notification {

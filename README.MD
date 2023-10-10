@@ -135,6 +135,9 @@ Este proyecto es una tienda en línea inspirada en Apple, donde los usuarios pue
 +   Se creó header.js: Éste, contendrá la lógica de la notificación del carrito, boton 'Light-Dark theme', menú 'hamburguesa' y 'search'.
 +   Se colocó un favicon para el sitio.
 
+## CHANGELOGS 8:
++   Se mejoró la compatibilidad de las animaciones: ahora mas dispositivos móbiles deberían ver correctamente las animaciones y las transformaciones de todos los objetos del sitio web.
+
 ## FUTURAS FUNCIONALIDADES
 * [ ]  Agregar contenido a las demas secciones del header.
 * [ ]  Hacer funcionar la 'lupa' para buscar un producto o una sección del sitio web.
